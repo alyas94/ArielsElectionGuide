@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariel's Picks — 2026 Primary Election</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B3A6B;
+    --blue: #2E5FA3;
+    --blue-light: #dce8f5;
+    --gold: #C8960C;
+    --gold-light: #FEF3C7;
+    --dem: #1a56a0;
+    --dem-light: #dce8f5;
+    --rep: #b22222;
+    --rep-light: #fde8e8;
+    --npg: #2e7d32;
+    --npg-light: #e8f5e9;
+    --gray: #6b7280;
+    --gray-light: #f9fafb;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --white: #ffffff;
+    --warm: #7c3aed;
+    --warm-light: #ede9fe;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: #faf7ff;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #5b21b6 100%);
+    color: white;
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '✨';
+    position: absolute;
+    top: 20px; left: 30px;
+    font-size: 40px;
+    opacity: 0.3;
+  }
+  .hero::after {
+    content: '✨';
+    position: absolute;
+    bottom: 20px; right: 30px;
+    font-size: 32px;
+    opacity: 0.3;
+  }
+  .hero-emoji { font-size: 52px; margin-bottom: 12px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 7vw, 52px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .hero h2 {
+    font-size: clamp(15px, 3vw, 20px);
+    font-weight: 300;
+    opacity: 0.85;
+    margin-bottom: 20px;
+  }
+
+  /* BACK BUTTON */
+  .back-bar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .back-btn {
+    color: var(--warm);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.15s;
+  }
+  .back-btn:hover { gap: 10px; }
+
+  /* INTRO */
+  .intro-card {
+    max-width: 700px;
+    margin: 28px auto 0;
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 12px rgba(124,58,237,0.1);
+    border: 1px solid #e9d5ff;
+    position: relative;
+  }
+  .intro-card::before {
+    content: '💜';
+    position: absolute;
+    top: -16px;
+    left: 28px;
+    font-size: 28px;
+  }
+  .intro-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--warm);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .intro-text {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .intro-note {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--gold-light);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #92400e;
+  }
+
+  /* PICKS LIST */
+  .picks-list {
+    max-width: 700px;
+    margin: 24px auto 60px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 16px 0 4px;
+    padding-left: 4px;
+  }
+
+  .pick-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .pick-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .pick-race {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .pick-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 4vw, 22px);
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .pick-party-badge {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+  .pick-party-badge.dem { background: var(--dem-light); color: var(--dem); }
+  .pick-party-badge.rep { background: var(--rep-light); color: var(--rep); }
+  .pick-party-badge.npg { background: var(--npg-light); color: var(--npg); }
+
+  .pick-note {
+    padding: 0 18px 14px;
+    font-size: 14px;
+    color: var(--gray);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 2px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .pick-note::before { content: '💭'; flex-shrink: 0; }
+
+  .pick-placeholder .pick-name {
+    color: #d1d5db;
+    font-style: italic;
+  }
+  .pick-placeholder {
+    border: 2px dashed #e5e7eb;
+    box-shadow: none;
+  }
+
+  /* TOUGH CHOICE */
+  .tough-badge {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--gray);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    background: white;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  footer a { color: var(--warm); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-emoji">🗳️</div>
+  <h1>Ariel's Picks</h1>
+  <h2>2026 Primary Election • My Personal Recommendations</h2>
+</div>
+
+<!-- BACK BAR -->
+<div class="back-bar">
+  <a href="index.html" class="back-btn">← Back to Full Voter Guide</a>
+</div>
+
+<!-- INTRO -->
+<div class="intro-card">
+  <div class="intro-label">A note from Ariel</div>
+  <p class="intro-text">
+    <!-- PLACEHOLDER INTRO — REPLACE THIS WITH YOUR OWN WORDS! -->
+    Hey fam! 👋 These are my personal picks for the June 2nd primary. I've done a lot of research on each of these races and these are the candidates I feel best represent our community and our values. You don't have to agree with me — that's the whole point of voting! — but if you trust my judgment and just want a quick answer, here you go. 😊
+    <br><br>
+    For the races where I'm flagging a "tough choice," I've added a little note explaining my thinking. Those are the ones where I genuinely went back and forth, so take those with a grain of salt and make up your own mind!
+  </p>
+  <div class="intro-note">
+    💡 <strong>Reminder:</strong> The top 2 vote-getters in each race advance to November regardless of party. Your primary vote matters!
+  </div>
+</div>
+
+<!-- PICKS LIST -->
+<div class="picks-list">
+
+  <div class="section-label">Statewide Races — Everyone Votes on These</div>
+
+  <!-- GOVERNOR -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">Governor of California</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- LT GOVERNOR -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">Lieutenant Governor</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- SECRETARY OF STATE -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">Secretary of State</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- CONTROLLER -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">State Controller</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- TREASURER -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">State Treasurer</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- ATTORNEY GENERAL -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">Attorney General</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- INSURANCE COMMISSIONER -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">Insurance Commissioner</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- BOE -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">Board of Equalization — District 1</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- SPI -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">Superintendent of Public Instruction</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge npg">🟢 No Party</div>
+    </div>
+  </div>
+
+  <div class="section-label">Local Races — Check Your District!</div>
+
+  <!-- CD7 -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">U.S. Congress — District 7 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Elk Grove / South Sac)</span></div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- CD3 -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">U.S. Congress — District 3 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Folsom / Rancho Cordova / Carmichael)</span></div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- SD8 -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">State Senate — District 8</div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- AD10 -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">State Assembly — District 10 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Elk Grove / Florin)</span></div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+  <!-- AD7 -->
+  <div class="pick-card pick-placeholder">
+    <div class="pick-header">
+      <div>
+        <div class="pick-race">State Assembly — District 7 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Citrus Heights / Folsom / Rancho Cordova)</span></div>
+        <div class="pick-name">[ Your Pick Here ]</div>
+      </div>
+      <div class="pick-party-badge dem">🔵 Democrat</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW TO EDIT NOTE -->
+<div style="max-width:700px;margin:0 auto 40px;padding:0 16px;">
+  <div style="background:#f3f4f6;border-radius:10px;padding:18px 20px;font-size:14px;color:var(--gray);">
+    <strong style="color:var(--text);">✏️ For Ariel:</strong> To fill in your picks, open <code>picks.html</code> in any text editor. For each race, replace the placeholder text with:
+    <br><br>
+    • The candidate's name in the <code>pick-name</code> div<br>
+    • The right party badge class (<code>dem</code>, <code>rep</code>, or <code>npg</code>)<br>
+    • Remove <code>pick-placeholder</code> from the card's class<br>
+    • Add a <code>&lt;div class="pick-note"&gt;</code> section if it was a tough choice<br>
+    <br>
+    <strong>Example of a tough choice card:</strong> Add <code>&lt;span class="tough-badge"&gt;Tough Choice&lt;/span&gt;</code> after the name and add a <code>pick-note</code> div explaining your reasoning.
+  </div>
+</div>
+
+<footer>
+  <p>← <a href="index.html">Back to the Full Voter Guide</a></p>
+  <p style="margin-top:8px; color:#9ca3af; font-size:13px;">Made with love for the fam 💙 | Primary Election Day: June 2, 2026</p>
+</footer>
+
+</body>
+</html>
