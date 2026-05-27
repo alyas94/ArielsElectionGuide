@@ -47,14 +47,14 @@
     overflow: hidden;
   }
   .hero::before {
-    content: '✨';
+    content: '';
     position: absolute;
     top: 20px; left: 30px;
     font-size: 40px;
     opacity: 0.3;
   }
   .hero::after {
-    content: '✨';
+    content: '';
     position: absolute;
     bottom: 20px; right: 30px;
     font-size: 32px;
@@ -108,7 +108,7 @@
     position: relative;
   }
   .intro-card::before {
-    content: '💜';
+    content: '';
     position: absolute;
     top: -16px;
     left: 28px;
@@ -184,7 +184,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(18px, 4vw, 22px);
     font-weight: 700;
-    color: var(--navy);
+    color: black;
   }
   .pick-party-badge {
     font-size: 13px;
@@ -215,7 +215,7 @@
   .pick-note::before { content: '💭'; flex-shrink: 0; }
 
   .pick-placeholder .pick-name {
-    color: #d1d5db;
+    color: black;
     font-style: italic;
   }
   .pick-placeholder {
@@ -270,13 +270,13 @@
 <div class="intro-card">
   <div class="intro-label">A note from Ariel</div>
   <p class="intro-text">
-    <!-- PLACEHOLDER INTRO — REPLACE THIS WITH YOUR OWN WORDS! -->
-    Hey fam! 👋 These are my personal picks for the June 2nd primary. I've done a lot of research on each of these races and these are the candidates I feel best represent our community and our values. You don't have to agree with me — that's the whole point of voting! — but if you trust my judgment and just want a quick answer, here you go. 😊
+  
+    Hey There! These are my personal picks for the June 2nd primary. I've done a lot of research on each of these races and these are the candidates I feel best represent our community and our values. I encourage you all to check out the full guide and make your own decisions, but if you trust my judgment and just want a quick answer, here you go!
     <br><br>
     For the races where I'm flagging a "tough choice," I've added a little note explaining my thinking. Those are the ones where I genuinely went back and forth, so take those with a grain of salt and make up your own mind!
   </p>
   <div class="intro-note">
-    💡 <strong>Reminder:</strong> The top 2 vote-getters in each race advance to November regardless of party. Your primary vote matters!
+   <strong>Reminder:</strong> The top 2 vote-getters in each race advance to November regardless of party. Your primary vote matters!
   </div>
 </div>
 
@@ -290,9 +290,10 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">Governor of California</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Xavier Becerra</div>      <span class="tough-badge">Tough Choice</span>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
+        <div class="pick-note">With so many candidates to choose from, this was a difficult choice. I chose Becerra because he is the most experienced candidate and aligns with my views the most out of the front runners.</div>
     </div>
   </div>
 
@@ -301,18 +302,19 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">Lieutenant Governor</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Fiona Ma</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-note">The Lieutenat Governor position is really a symbolic position, but I'm going Fiona Ma as she's one of the only candidates with a lot of experience.</div>
     </div>
   </div>
 
   <!-- SECRETARY OF STATE -->
-  <div class="pick-card pick-placeholder">
+  <div class="pick-card">
     <div class="pick-header">
       <div>
         <div class="pick-race">Secretary of State</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Shirley N. Weber</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -323,7 +325,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">State Controller</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Malia Cohen</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -334,9 +336,11 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">State Treasurer</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
-      </div>
+        <div class="pick-name">Anna Caballero</div><span class="tough-badge">Tough Choice</span>
+           </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
+         <div class="pick-note">This is a tough race. Kounalakis probably has the best odds of winning and is probably most qualified. I originally wanted to vote for Tony Vazquez, but in an effoft to not split the vote too much I'm choosing Caballero</div>
+
     </div>
   </div>
 
@@ -345,7 +349,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">Attorney General</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Rob Bonta</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -356,7 +360,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">Insurance Commissioner</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Jane Kim</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -367,7 +371,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">Board of Equalization — District 1</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Nelson Esparza</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -378,7 +382,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">Superintendent of Public Instruction</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Nichelle M Henderson</div>
       </div>
       <div class="pick-party-badge npg">🟢 No Party</div>
     </div>
@@ -391,9 +395,11 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">U.S. Congress — District 7 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Elk Grove / South Sac)</span></div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Mai Vang</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-note">Doris Matsui has served our district well, but at 81 years old, I feel like we need to head in a new direction. I'm choosing Mai Vang for her youth, but also she does have 20 years of experience.</div>
+
     </div>
   </div>
 
@@ -402,7 +408,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">U.S. Congress — District 3 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Folsom / Rancho Cordova / Carmichael)</span></div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Ami Bera</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -413,9 +419,10 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">State Senate — District 8</div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Angelique Ashby</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-note">Angelique is the incumbent, but also is not really facing any serious challengers. She'll likely win in a landslide.</div>
     </div>
   </div>
 
@@ -424,7 +431,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">State Assembly — District 10 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Elk Grove / Florin)</span></div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Stephanie Nguyen</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -435,7 +442,7 @@
     <div class="pick-header">
       <div>
         <div class="pick-race">State Assembly — District 7 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Citrus Heights / Folsom / Rancho Cordova)</span></div>
-        <div class="pick-name">[ Your Pick Here ]</div>
+        <div class="pick-name">Amy Slavensky</div>
       </div>
       <div class="pick-party-badge dem">🔵 Democrat</div>
     </div>
@@ -443,23 +450,9 @@
 
 </div>
 
-<!-- HOW TO EDIT NOTE -->
-<div style="max-width:700px;margin:0 auto 40px;padding:0 16px;">
-  <div style="background:#f3f4f6;border-radius:10px;padding:18px 20px;font-size:14px;color:var(--gray);">
-    <strong style="color:var(--text);">✏️ For Ariel:</strong> To fill in your picks, open <code>picks.html</code> in any text editor. For each race, replace the placeholder text with:
-    <br><br>
-    • The candidate's name in the <code>pick-name</code> div<br>
-    • The right party badge class (<code>dem</code>, <code>rep</code>, or <code>npg</code>)<br>
-    • Remove <code>pick-placeholder</code> from the card's class<br>
-    • Add a <code>&lt;div class="pick-note"&gt;</code> section if it was a tough choice<br>
-    <br>
-    <strong>Example of a tough choice card:</strong> Add <code>&lt;span class="tough-badge"&gt;Tough Choice&lt;/span&gt;</code> after the name and add a <code>pick-note</code> div explaining your reasoning.
-  </div>
-</div>
-
 <footer>
   <p>← <a href="index.html">Back to the Full Voter Guide</a></p>
-  <p style="margin-top:8px; color:#9ca3af; font-size:13px;">Made with love for the fam 💙 | Primary Election Day: June 2, 2026</p>
+  <p style="margin-top:8px; color:#9ca3af; font-size:13px;">Primary Election Day: June 2, 2026</p>
 </footer>
 
 </body>
