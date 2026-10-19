@@ -1,459 +1,460 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ariel's Picks — 2026 Primary Election</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<title>Ariel's Picks — November 2026 Voter Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #1B3A6B;
-    --blue: #2E5FA3;
-    --blue-light: #dce8f5;
-    --gold: #C8960C;
-    --gold-light: #FEF3C7;
-    --dem: #1a56a0;
-    --dem-light: #dce8f5;
-    --rep: #b22222;
-    --rep-light: #fde8e8;
-    --npg: #2e7d32;
-    --npg-light: #e8f5e9;
-    --gray: #6b7280;
-    --gray-light: #f9fafb;
-    --border: #e5e7eb;
-    --text: #1f2937;
-    --white: #ffffff;
-    --warm: #7c3aed;
-    --warm-light: #ede9fe;
-  }
+:root {
+  --navy:#1B3A6B;--warm:#7c3aed;--warm-light:#ede9fe;--warm-dark:#6d28d9;
+  --gold:#C8960C;--gold-light:#FEF3C7;
+  --dem:#1a56a0;--dem-light:#dce8f5;
+  --rep:#b22222;--rep-light:#fde8e8;
+  --npg:#2e7d32;--npg-light:#e8f5e9;
+  --yes:#059669;--yes-light:#d1fae5;
+  --no:#b22222;--no-light:#fde8e8;
+  --gray:#6b7280;--gray-light:#f9fafb;
+  --border:#e5e7eb;--text:#1f2937;--white:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:#f5f3ff;padding-bottom:60px}
+h1,h2,h3{font-family:'Playfair Display',serif}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* TOP BAR */
+.top-bar{background:var(--warm);padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.top-bar a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.85rem;font-weight:600}
+.top-bar a:hover{color:#fff}
 
-  body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: #faf7ff;
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.6;
-  }
+/* HERO */
+.hero{background:linear-gradient(160deg,#4c1d95 0%,#7c3aed 100%);color:#fff;text-align:center;padding:40px 20px 36px}
+.hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff;margin-bottom:10px}
+.hero p{color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.6}
 
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #5b21b6 100%);
-    color: white;
-    padding: 48px 24px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 20px; left: 30px;
-    font-size: 40px;
-    opacity: 0.3;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 20px; right: 30px;
-    font-size: 32px;
-    opacity: 0.3;
-  }
-  .hero-emoji { font-size: 52px; margin-bottom: 12px; }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 7vw, 52px);
-    font-weight: 900;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-  }
-  .hero h2 {
-    font-size: clamp(15px, 3vw, 20px);
-    font-weight: 300;
-    opacity: 0.85;
-    margin-bottom: 20px;
-  }
+.main{max-width:680px;margin:0 auto;padding:28px 16px}
 
-  /* BACK BUTTON */
-  .back-bar {
-    background: white;
-    border-bottom: 1px solid var(--border);
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .back-btn {
-    color: var(--warm);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.15s;
-  }
-  .back-btn:hover { gap: 10px; }
+/* PICK ROWS */
+.pick-row{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:10px;position:relative}
+.pick-row:hover{box-shadow:0 2px 8px rgba(0,0,0,.07)}
 
-  /* INTRO */
-  .intro-card {
-    max-width: 700px;
-    margin: 28px auto 0;
-    background: white;
-    border-radius: 16px;
-    padding: 28px 32px;
-    box-shadow: 0 2px 12px rgba(124,58,237,0.1);
-    border: 1px solid #e9d5ff;
-    position: relative;
-  }
-  .intro-card::before {
-    content: '';
-    position: absolute;
-    top: -16px;
-    left: 28px;
-    font-size: 28px;
-  }
-  .intro-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--warm);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .intro-text {
-    font-size: 16px;
-    color: var(--text);
-    line-height: 1.7;
-  }
-  .intro-note {
-    margin-top: 14px;
-    padding: 12px 16px;
-    background: var(--gold-light);
-    border-radius: 8px;
-    font-size: 14px;
-    color: #92400e;
-  }
+.row-top{display:flex;align-items:flex-start;gap:12px;justify-content:space-between}
+.row-left{flex:1;min-width:0}
 
-  /* PICKS LIST */
-  .picks-list {
-    max-width: 700px;
-    margin: 24px auto 60px;
-    padding: 0 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+.race-name{font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:4px}
+.race-sub{font-size:.78rem;color:var(--gray)}
 
-  .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--gray);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 16px 0 4px;
-    padding-left: 4px;
-  }
+/* FLAIR BADGES */
+.flair{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:10px;margin-right:6px;vertical-align:middle}
+.flair-state{background:#dce8f5;color:#1a56a0}
+.flair-local{background:#fef3c7;color:#92400e}
+.flair-judicial{background:#e8f5e9;color:#2e7d32}
+.flair-prop{background:var(--warm-light);color:var(--warm-dark)}
+.flair-measure{background:#fce7f3;color:#9d174d}
 
-  .pick-card {
-    background: white;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
+/* PICK VALUE */
+.pick-value{font-size:1rem;font-weight:800;white-space:nowrap;padding-top:2px;flex-shrink:0}
+.pick-dem{color:var(--dem)}
+.pick-rep{color:var(--rep)}
+.pick-npg{color:var(--npg)}
+.pick-yes{color:var(--yes)}
+.pick-no{color:var(--no)}
+.pick-multi{color:var(--warm);font-size:.88rem;text-align:right;line-height:1.4}
 
-  .pick-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 18px;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .pick-race {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--gray);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
-  }
-  .pick-name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(18px, 4vw, 22px);
-    font-weight: 700;
-    color: black;
-  }
-  .pick-party-badge {
-    font-size: 13px;
-    font-weight: 700;
-    padding: 4px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
-    align-self: flex-start;
-    margin-top: 2px;
-  }
-  .pick-party-badge.dem { background: var(--dem-light); color: var(--dem); }
-  .pick-party-badge.rep { background: var(--rep-light); color: var(--rep); }
-  .pick-party-badge.npg { background: var(--npg-light); color: var(--npg); }
+/* ARIEL'S NOTE */
+.ariels-note{margin-top:12px;background:var(--warm-light);border-left:4px solid var(--warm);border-radius:0 6px 6px 0;padding:10px 14px;font-size:.84rem;line-height:1.55;color:#3b0764}
+.ariels-note strong{color:var(--warm-dark)}
 
-  .pick-note {
-    padding: 0 18px 14px;
-    font-size: 14px;
-    color: var(--gray);
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-    border-top: 1px solid var(--border);
-    padding-top: 10px;
-    margin-top: 2px;
-    font-style: italic;
-    line-height: 1.5;
-  }
-  .pick-note::before { content: '💭'; flex-shrink: 0; }
+/* JUDICIAL GROUP */
+.judicial-group{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:10px}
+.judicial-header{background:var(--npg-light);padding:12px 18px;border-bottom:1px solid #c6e6c7}
+.judicial-header .race-name{color:var(--npg)}
+.judicial-note{padding:14px 18px;font-size:.88rem;line-height:1.55;color:var(--text)}
+.judicial-note strong{color:var(--npg)}
+.judge-row{display:flex;justify-content:space-between;align-items:center;padding:8px 18px;border-top:1px solid var(--border);font-size:.85rem}
+.judge-name{color:var(--gray)}
+.judge-pick{font-weight:800;color:var(--yes)}
 
-  .pick-placeholder .pick-name {
-    color: black;
-    font-style: italic;
-  }
-  .pick-placeholder {
-    border: 2px dashed #e5e7eb;
-    box-shadow: none;
-  }
+.back-link{text-align:center;margin-top:32px}
+.back-link a{color:var(--warm);font-weight:600;text-decoration:none;font-size:.9rem}
+.back-link a:hover{text-decoration:underline}
 
-  /* TOUGH CHOICE */
-  .tough-badge {
-    display: inline-block;
-    background: var(--gold-light);
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.3px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 32px 16px;
-    color: var(--gray);
-    font-size: 14px;
-    border-top: 1px solid var(--border);
-    background: white;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  footer a { color: var(--warm); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+.section-label{font-family:'Playfair Display',serif;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin:28px 0 10px 2px}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<div class="top-bar">
+  <span style="color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem">Ariel's Picks</span>
+  <a href="index.html">← Back to Full Guide</a>
+</div>
+
 <div class="hero">
-  <div class="hero-emoji">🗳️</div>
   <h1>Ariel's Picks</h1>
-  <h2>2026 Primary Election • My Personal Recommendations</h2>
+  <p>November 2026 California General Election · Sacramento Area<br>These are my personal picks — Do your own research too!<br>Questions? Head to the <a href="index.html" style="color:#fff;font-weight:700;text-decoration:underline">full voter guide</a>.</p>
 </div>
 
-<!-- BACK BAR -->
-<div class="back-bar">
-  <a href="index.html" class="back-btn">← Back to Full Voter Guide</a>
-</div>
-
-<!-- INTRO -->
-<div class="intro-card">
-  <div class="intro-label">A note from Ariel</div>
-  <p class="intro-text">
-  
-    Hey There! These are my personal picks for the June 2nd primary. I've done a lot of research on each of these races and these are the candidates I feel best represent our community and our values. I encourage you all to check out the full guide and make your own decisions, but if you trust my judgment and just want a quick answer, here you go!
-    <br><br>
-    For the races where I'm flagging a "tough choice," I've added a little note explaining my thinking. Those are the ones where I genuinely went back and forth, so take those with a grain of salt and make up your own mind!
-  </p>
-  <div class="intro-note">
-   <strong>Reminder:</strong> The top 2 vote-getters in each race advance to November regardless of party. Your primary vote matters!
-  </div>
-</div>
-
-<!-- PICKS LIST -->
-<div class="picks-list">
-
-  <div class="section-label">Statewide Races — Everyone Votes on These</div>
+<div class="main">
 
   <!-- GOVERNOR -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">Governor of California</div>
-        <div class="pick-name">Xavier Becerra</div>      <span class="tough-badge">Tough Choice</span>
+  <div class="ariels-note"><strong>IMPORTANT:</strong> Not all of these will appear on your ballot. Ignore the races not on your ballot.</div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Governor</div>
+        <div class="race-sub">Becerra (D) vs. Hilton (R)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
-        <div class="pick-note">With so many candidates to choose from, this was a difficult choice. I chose Becerra because he is the most experienced candidate and aligns with my views the most out of the front runners.</div>
+      <div class="pick-value pick-dem">Xavier Becerra</div>
     </div>
   </div>
 
-  <!-- LT GOVERNOR -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">Lieutenant Governor</div>
-        <div class="pick-name">Fiona Ma</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Lieutenant Governor</div>
+        <div class="race-sub">Fiona Ma (D) vs. Gloria Romero (R)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
-      <div class="pick-note">The Lieutenat Governor position is really a symbolic position, but I'm going Fiona Ma as she's one of the only candidates with a lot of experience.</div>
+      <div class="pick-value pick-dem">Fiona Ma</div>
     </div>
   </div>
 
-  <!-- SECRETARY OF STATE -->
-  <div class="pick-card">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">Secretary of State</div>
-        <div class="pick-name">Shirley N. Weber</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Secretary of State</div>
+        <div class="race-sub">Shirley Weber (D) vs. Don Wagner (R)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-dem">Shirley N. Weber</div>
     </div>
   </div>
 
-  <!-- CONTROLLER -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">State Controller</div>
-        <div class="pick-name">Malia Cohen</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Controller</div>
+        <div class="race-sub">Malia Cohen (D) vs. Herb Morgan (R)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-dem">Malia Cohen</div>
     </div>
   </div>
 
-  <!-- TREASURER -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">State Treasurer</div>
-        <div class="pick-name">Anna Caballero</div><span class="tough-badge">Tough Choice</span>
-           </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
-         <div class="pick-note">This is a tough race. Kounalakis probably has the best odds of winning and is probably most qualified. I originally wanted to vote for Tony Vazquez, but in an effoft to not split the vote too much I'm choosing Caballero</div>
-
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Treasurer</div>
+        <div class="race-sub">Kounalakis (D) vs. Jennifer Hawks (R)</div>
+      </div>
+      <div class="pick-value pick-dem">Eleni Kounalakis</div>
     </div>
   </div>
 
-  <!-- ATTORNEY GENERAL -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">Attorney General</div>
-        <div class="pick-name">Rob Bonta</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Attorney General</div>
+        <div class="race-sub">Rob Bonta (D) vs. Michael Gates (R)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-dem">Rob Bonta</div>
     </div>
   </div>
 
-  <!-- INSURANCE COMMISSIONER -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">Insurance Commissioner</div>
-        <div class="pick-name">Jane Kim</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Insurance Commissioner</div>
+        <div class="race-sub">🔵🔵 Ben Allen (D) vs. Jane Kim (D)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-dem">Jane Kim</div>
+    </div>
+    <div class="ariels-note"><strong>Ariel's Note:</strong> The Solano Household struggled a lot with our choice for Insurance Commissioner. Ultimately we decided to vote for Jane Kim. While her proposals seem very ambitious, we think there needs to be radical change for insurance in California, and believe Kim is the right candidate to bring such change.</div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>Board of Equalization — District 1</div>
+        <div class="race-sub">Shannon Grove (R) vs. Nelson Esparza (D)</div>
+      </div>
+      <div class="pick-value pick-dem">Nelson Esparza</div>
     </div>
   </div>
 
-  <!-- BOE -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">Board of Equalization — District 1</div>
-        <div class="pick-name">Nelson Esparza</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>Congress — District 7</div>
+        <div class="race-sub">🔵🔵 Doris Matsui (D) vs. Mai Vang (D)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-dem">Mai Vang</div>
     </div>
+    <div class="ariels-note"><strong>Ariel's Note:</strong> This was a split decision in the Solano house. Ultimately I chose Mai Vang as I think we need a change from Doris Matsui who is 81 and will be 84 at the end of the next term. Vang's No-corporate-PAC pledge is also very important to me.</div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>Congress — District 3</div>
+        <div class="race-sub">Ami Bera (D) vs. Robb Tucker (R)</div>
+      </div>
+      <div class="pick-value pick-dem">Ami Bera</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>State Senate — District 8</div>
+        <div class="race-sub">Angelique Ashby (D) vs. Susan Mason (R)</div>
+      </div>
+      <div class="pick-value pick-dem">Angelique Ashby</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>State Assembly — District 10</div>
+        <div class="race-sub">Stephanie Nguyen (D) vs. Vinaya Singh (R)</div>
+      </div>
+      <div class="pick-value pick-dem">Stephanie Nguyen</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>State Assembly — District 7</div>
+        <div class="race-sub">Josh Hoover (R) vs. Amy Slavensky (D)</div>
+      </div>
+      <div class="pick-value pick-dem">Amy Slavensky</div>
+    </div>
+  </div>
+
+  <!-- JUDICIAL -->
+  <div class="judicial-group">
+    <div class="judicial-header">
+      <div class="race-name"><span class="flair flair-judicial">Judicial</span>Supreme Court &amp; Court of Appeal — Retention Votes</div>
+    </div>
+    <div class="judicial-note">
+      <strong>Ariel's Note:</strong> After much research I voted <strong>YES</strong> on all the judges as I saw no major red flags or anything I felt should disqualify them from the bench. Retention votes are a YES or NO — you're not choosing between candidates.
+    </div>
+    <div class="judge-row"><span class="judge-name">Supreme Court — Joshua Groban</span><span class="judge-pick">✅ YES</span></div>
+    <div class="judge-row"><span class="judge-name">Supreme Court — Kelli M. Evans</span><span class="judge-pick">✅ YES</span></div>
+    <div class="judge-row"><span class="judge-name">Court of Appeal — Laurie Earl</span><span class="judge-pick">✅ YES</span></div>
+    <div class="judge-row"><span class="judge-name">Court of Appeal — Lauri Damrell</span><span class="judge-pick">✅ YES</span></div>
+    <div class="judge-row"><span class="judge-name">Court of Appeal — Stacy Boulware Eurie</span><span class="judge-pick">✅ YES</span></div>
+    <div class="judge-row"><span class="judge-name">Court of Appeal — Jonathan Renner</span><span class="judge-pick">✅ YES</span></div>
+    <div class="judge-row"><span class="judge-name">Court of Appeal — Aimee A. Feinberg</span><span class="judge-pick">✅ YES</span></div>
+    <div class="judge-row"><span class="judge-name">Court of Appeal — Shama Mesiwala</span><span class="judge-pick">✅ YES</span></div>
   </div>
 
   <!-- SPI -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">Superintendent of Public Instruction</div>
-        <div class="pick-name">Nichelle M Henderson</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-state">Statewide</span>Superintendent of Public Instruction</div>
+        <div class="race-sub">Richard Barrera (NPP/D) vs. Sonja Shaw (NPP/R)</div>
       </div>
-      <div class="pick-party-badge npg">🟢 No Party</div>
+      <div class="pick-value pick-npg">Richard Barrera</div>
     </div>
   </div>
 
-  <div class="section-label">Local Races — Check Your District!</div>
-
-  <!-- CD7 -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">U.S. Congress — District 7 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Elk Grove / South Sac)</span></div>
-        <div class="pick-name">Mai Vang</div>
+  <!-- EGUSD -->
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>EGUSD Board — Trustee Area 2</div>
+        <div class="race-sub">Michael Vargas (NPP/D) vs. Kirk Thomson (NPP/R)</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
-      <div class="pick-note">Doris Matsui has served our district well, but at 81 years old, I feel like we need to head in a new direction. I'm choosing Mai Vang for her youth, but also she does have 20 years of experience.</div>
-
+      <div class="pick-value pick-npg">Michael Vargas</div>
     </div>
   </div>
 
-  <!-- CD3 -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">U.S. Congress — District 3 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Folsom / Rancho Cordova / Carmichael)</span></div>
-        <div class="pick-name">Ami Bera</div>
+  <!-- FLORIN RCD -->
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-local">Local</span>Florin Resource Conservation District — Director</div>
+        <div class="race-sub">Vote for up to 3 · Paul Lindsay · Bret Bartholomew · John Moua · Kimberly Martin</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-npg" style="text-align:right;line-height:1.6">Paul Lindsay<br>Bret Bartholomew<br>John Moua</div>
+    </div>
+    <div class="ariels-note"><strong>Ariel's Note:</strong> The ballot says to pick <strong>no more than 3</strong> candidates. These are my three choices.</div>
+  </div>
+
+  <!-- PROPS -->
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 1</span>Housing Bonds</div>
+        <div class="race-sub">Borrow $11.25B for affordable housing</div>
+      </div>
+      <div class="pick-value pick-yes">✅ YES</div>
     </div>
   </div>
 
-  <!-- SD8 -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">State Senate — District 8</div>
-        <div class="pick-name">Angelique Ashby</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 2</span>Rainy Day Fund</div>
+        <div class="race-sub">Raise state reserve limit from 10% to 20%</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
-      <div class="pick-note">Angelique is the incumbent, but also is not really facing any serious challengers. She'll likely win in a landslide.</div>
+      <div class="pick-value pick-yes">✅ YES</div>
     </div>
   </div>
 
-  <!-- AD10 -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">State Assembly — District 10 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Elk Grove / Florin)</span></div>
-        <div class="pick-name">Stephanie Nguyen</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 3</span>Make Education Tax Permanent</div>
+        <div class="race-sub">Make the higher-earner income tax permanent</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-yes">✅ YES</div>
     </div>
   </div>
 
-  <!-- AD7 -->
-  <div class="pick-card pick-placeholder">
-    <div class="pick-header">
-      <div>
-        <div class="pick-race">State Assembly — District 7 <span style="font-size:11px;color:var(--gold);font-weight:700;">(Citrus Heights / Folsom / Rancho Cordova)</span></div>
-        <div class="pick-name">Amy Slavensky</div>
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 4</span>Public Campaign Financing</div>
+        <div class="race-sub">Allow public financing of political campaigns</div>
       </div>
-      <div class="pick-party-badge dem">🔵 Democrat</div>
+      <div class="pick-value pick-yes">✅ YES</div>
     </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 5</span>Recall Reform</div>
+        <div class="race-sub">Delay replacing recalled state officials to a separate election</div>
+      </div>
+      <div class="pick-value pick-yes">✅ YES</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 37</span>Low-Cost Mortgages</div>
+        <div class="race-sub">Create low-cost mortgages for new home construction</div>
+      </div>
+      <div class="pick-value pick-yes">✅ YES</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 38</span>Immunology Research Bond</div>
+        <div class="race-sub">Borrow $8.4B for cancer/heart disease/Alzheimer's research</div>
+      </div>
+      <div class="pick-value pick-no">❌ NO</div>
+    </div>
+    <div class="ariels-note"><strong>Ariel's Note:</strong> While I understand this prop would give billions to medical research, a majority of this money goes to just one single research facility. This seems to be intentionally written to only give money to this specific facility. Because of this, I'm voting no.</div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 39</span>Voter ID</div>
+        <div class="race-sub">Require government-issued ID to vote in person or by mail</div>
+      </div>
+      <div class="pick-value pick-no">❌ NO</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 40</span>Billionaire Tax</div>
+        <div class="race-sub">One-time 5% tax on ~200 CA billionaires · Connected to Props 41 &amp; 42</div>
+      </div>
+      <div class="pick-value pick-yes">✅ YES</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 41</span>Audit New Tax Programs</div>
+        <div class="race-sub">Would nullify Prop 40 if it gets more YES votes</div>
+      </div>
+      <div class="pick-value pick-no">❌ NO</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 42</span>Ban Wealth Taxes</div>
+        <div class="race-sub">Would nullify Prop 40 if it gets more YES votes</div>
+      </div>
+      <div class="pick-value pick-no">❌ NO</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 43</span>Higher Threshold for Local Taxes</div>
+        <div class="race-sub">Raise citizen-driven local special tax threshold to two-thirds</div>
+      </div>
+      <div class="pick-value pick-no">❌ NO</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 44</span>Community Clinic Spending</div>
+        <div class="race-sub">Require community clinics to spend 90% on patient care</div>
+      </div>
+      <div class="pick-value pick-no">❌ NO</div>
+    </div>
+    <div class="ariels-note"><strong>Ariel's Note:</strong> There is no question that community clinics should be spending a majority of their funding on patients. After a lot of research I feel this prop will do more harm than good, especially since most community clinics already spend nearly 80% of their revenue on patient care.</div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-prop">Prop 45</span>CEQA Reform</div>
+        <div class="race-sub">Speed up environmental reviews for housing &amp; infrastructure</div>
+      </div>
+      <div class="pick-value pick-no">❌ NO</div>
+    </div>
+    <div class="ariels-note"><strong>Ariel's Note:</strong> I do believe we need to speed up the environmental review process for numerous reasons, but the inclusion of "broadband" in this proposition I believe will lead companies to try and use this towards Data Centers. For that reason alone, I am voting no.</div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-measure">Measure H</span>Los Rios Community College Bond</div>
+        <div class="race-sub">$1.1B bond for Los Rios facilities · Sacramento/Yolo counties</div>
+      </div>
+      <div class="pick-value pick-yes">✅ YES</div>
+    </div>
+  </div>
+
+  <div class="pick-row">
+    <div class="row-top">
+      <div class="row-left">
+        <div class="race-name"><span class="flair flair-measure">Measure M</span>Sacramento City USD Parcel Tax</div>
+        <div class="race-sub">Parcel tax for special education · Sacramento City Unified</div>
+      </div>
+      <div class="pick-value pick-yes">✅ YES</div>
+    </div>
+  </div>
+  <div class="ariels-note"><strong>AM I MISSING ONE?</strong> Something on your ballot I didnt cover? Please reach out to me!</div>
+
+  <div class="back-link">
+    <a href="index.html">← Back to Full Voter Guide</a>
   </div>
 
 </div>
-
-<footer>
-  <p>← <a href="index.html">Back to the Full Voter Guide</a></p>
-  <p style="margin-top:8px; color:#9ca3af; font-size:13px;">Primary Election Day: June 2, 2026</p>
-</footer>
-
 </body>
 </html>
+
+</body></html>
